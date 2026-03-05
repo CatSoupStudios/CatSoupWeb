@@ -1,0 +1,99 @@
+---
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { label: "Twitter", href: "#", icon: "𝕏" },
+  { label: "GitHub", href: "#", icon: "⌘" },
+  { label: "Discord", href: "#", icon: "◈" },
+];
+---
+
+<footer class="footer">
+  <div class="footer-inner container">
+    <div class="footer-left">
+      <span class="footer-brand">
+        <span class="logo-symbol">⬡</span> CatSoup Studios
+      </span>
+      <p class="footer-copy">© {currentYear} CatSoup Studios. All rights reserved.</p>
+    </div>
+
+    <div class="footer-right">
+      {socialLinks.map((link) => (
+        <a href={link.href} class="footer-social" aria-label={link.label} title={link.label}>
+          {link.icon}
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: var(--space-2xl) 0;
+    border-top: 1px solid var(--border-subtle);
+    background: var(--bg-deep);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .footer-brand {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+  }
+
+  .logo-symbol {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .footer-right {
+    display: flex;
+    gap: var(--space-lg);
+  }
+
+  .footer-social {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+    transition: all var(--transition-fast);
+  }
+
+  .footer-social:hover {
+    color: var(--accent-cyan);
+    border-color: var(--border-accent);
+    background: rgba(56, 189, 248, 0.05);
+  }
+
+  @media (max-width: 768px) {
+    .footer-inner {
+      flex-direction: column;
+      gap: var(--space-lg);
+      text-align: center;
+    }
+  }
+</style>

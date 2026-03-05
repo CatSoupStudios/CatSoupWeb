@@ -1,0 +1,929 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ParticleBackground from "../components/ParticleBackground";
+import ProjectCard from "../components/ProjectCard";
+---
+
+<BaseLayout>
+  <Navbar />
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <ParticleBackground client:only="react" />
+    </div>
+    <div class="hero-content container">
+      <div class="hero-badge animate-in">
+        <span class="badge-dot"></span>
+        Indie Studio · Crafting Digital Experiences
+      </div>
+      <h1 class="hero-title animate-in animate-in-delay-1">
+        We build products<br />people
+        <span class="gradient-text">love to use</span>
+      </h1>
+      <p class="hero-subtitle animate-in animate-in-delay-2">
+        CatSoup Studios is a small, passionate team building premium apps
+        and digital experiences. Quality over quantity, always.
+      </p>
+      <div class="hero-actions animate-in animate-in-delay-3">
+        <a href="#projects" class="btn-primary">
+          Explore our work
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-fade"></div>
+  </section>
+
+  <!-- ====== PROJECTS ====== -->
+  <section class="section section--projects" id="projects">
+    <div class="projects-bg-glow"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">
+          Projects we're<br /><span class="gradient-text">proud of</span>
+        </h2>
+        <p class="section-subtitle">
+          From concept to launch, we obsess over every detail. Here's what we've been building.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-featured-wrapper">
+          <div class="featured-badge">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M8 1l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.4 3.5 14.7l.9-5L.8 6.2l5-.7L8 1z" fill="currentColor"/>
+            </svg>
+            Featured Project
+          </div>
+          <ProjectCard
+            client:visible
+            title="Auroriah"
+            description="A premium social platform with end-to-end encryption, real-time presence, and a vibrant community experience. Built with privacy-first architecture, featuring encrypted DMs, live status, customizable profiles, and a unique Aura farming system."
+            status="live"
+            featured={true}
+            icon="✦"
+            href="#"
+            techStack={["React", "TypeScript", "Firebase", "E2EE", "Electron"]}
+          />
+        </div>
+
+        <ProjectCard
+          client:visible
+          title="Project Nebula"
+          description="Our next venture — a creative toolkit for digital artists. Stay tuned for something special."
+          status="coming-soon"
+          icon="◇"
+          techStack={["Coming 2026"]}
+        />
+        <ProjectCard
+          client:visible
+          title="CatSoup Engine"
+          description="Internal tools and systems that power everything we build. Modular, fast, and open-source soon."
+          status="in-development"
+          icon="⬡"
+          techStack={["Node.js", "TypeScript"]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TEAM ====== -->
+  <section class="section section--team" id="team">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-label">The Team</span>
+        <h2 class="section-title">
+          The people behind<br /><span class="gradient-text">the magic</span>
+        </h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          A small but mighty crew, obsessed with building the best.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">
+            <div class="avatar-glow"></div>
+            <div class="avatar-ring">
+              <span class="avatar-emoji">👑</span>
+            </div>
+          </div>
+          <h3 class="team-name">Orianna</h3>
+          <span class="team-role">CEO & Founder</span>
+          <p class="team-bio">Visionary leader driving strategy, product direction, and the overall CatSoup mission.</p>
+          <div class="team-socials">
+            <span class="team-tag">Strategy</span>
+            <span class="team-tag">Product</span>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">
+            <div class="avatar-glow avatar-glow--blue"></div>
+            <div class="avatar-ring avatar-ring--blue">
+              <span class="avatar-emoji">⚡</span>
+            </div>
+          </div>
+          <h3 class="team-name">Astra</h3>
+          <span class="team-role">Lead Developer</span>
+          <p class="team-bio">Full-stack engineer and architect. Turns complex ideas into elegant, working code.</p>
+          <div class="team-socials">
+            <span class="team-tag">React</span>
+            <span class="team-tag">TypeScript</span>
+            <span class="team-tag">Node.js</span>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">
+            <div class="avatar-glow avatar-glow--purple"></div>
+            <div class="avatar-ring avatar-ring--purple">
+              <span class="avatar-emoji">🔍</span>
+            </div>
+          </div>
+          <h3 class="team-name">Yulit</h3>
+          <span class="team-role">QA Engineer</span>
+          <p class="team-bio">Quality guardian. If there's a bug, she'll find it — and make sure it never comes back.</p>
+          <div class="team-socials">
+            <span class="team-tag">Testing</span>
+            <span class="team-tag">QA</span>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">
+            <div class="avatar-glow avatar-glow--pink"></div>
+            <div class="avatar-ring avatar-ring--pink">
+              <span class="avatar-emoji">🎨</span>
+            </div>
+          </div>
+          <h3 class="team-name">DZDani</h3>
+          <span class="team-role">UI/UX Designer</span>
+          <p class="team-bio">Pixel-perfect creative mind. Crafts interfaces that feel both beautiful and intuitive.</p>
+          <div class="team-socials">
+            <span class="team-tag">UI/UX</span>
+            <span class="team-tag">Figma</span>
+            <span class="team-tag">Motion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ABOUT ====== -->
+  <section class="section section--about" id="about">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-text">
+          <span class="section-label">About Us</span>
+          <h2 class="section-title">
+            Small team,<br /><span class="gradient-text">big ambition</span>
+          </h2>
+          <p class="section-subtitle">
+            We're CatSoup Studios — an indie team obsessed with building
+            beautiful, functional, and delightful digital products.
+          </p>
+          <p class="about-body">
+            We believe the best software comes from small teams who care deeply
+            about every pixel and every interaction. No bloated feature lists,
+            no corporate compromises. Just thoughtful products built with love.
+          </p>
+        </div>
+        <div class="about-values">
+          <div class="value-card">
+            <span class="value-icon">◈</span>
+            <h3 class="value-title">Quality First</h3>
+            <p class="value-desc">Every detail matters. We ship when it's ready, not when the calendar says so.</p>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">◇</span>
+            <h3 class="value-title">Privacy by Design</h3>
+            <p class="value-desc">Your data is yours. End-to-end encryption and zero-knowledge architecture.</p>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">△</span>
+            <h3 class="value-title">Open Source Spirit</h3>
+            <p class="value-desc">We give back to the community that made us possible. Tools and knowledge, shared freely.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT/CTA ====== -->
+  <section class="section section--contact" id="contact">
+    <div class="container">
+      <div class="cta-block">
+        <span class="section-label">Get in Touch</span>
+        <h2 class="cta-title">
+          Let's build something<br /><span class="gradient-text">together</span>
+        </h2>
+        <p class="section-subtitle" style="margin: 0 auto var(--space-2xl);">
+          Have an idea? Want to collaborate? We'd love to hear from you.
+        </p>
+        <div class="cta-actions">
+          <a href="mailto:hello@catsoupstudios.com" class="btn-primary btn-lg">
+            Say Hello
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#" class="btn-ghost">
+            Join our Discord
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* ====== HERO ====== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: var(--space-5xl);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    padding: var(--space-xs) var(--space-lg);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-cyan);
+    animation: pulse-glow 2s infinite;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto var(--space-2xl);
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+  }
+
+  .hero-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(transparent, var(--bg-deep));
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* ====== BUTTONS ====== */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    background: var(--gradient-accent);
+    color: #0d0518;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0);
+    transition: background var(--transition-fast);
+  }
+
+  .btn-primary:hover::before {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(56, 189, 248, 0.3);
+  }
+
+  .btn-lg {
+    padding: var(--space-lg) var(--space-2xl);
+    font-size: 1rem;
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-subtle);
+    transition: all var(--transition-base);
+  }
+
+  .btn-ghost:hover {
+    color: var(--text-primary);
+    border-color: var(--border-accent);
+    background: rgba(56, 189, 248, 0.05);
+  }
+
+  /* ====== SECTION HEADERS ====== */
+  .section-header {
+    margin-bottom: var(--space-3xl);
+  }
+
+  .section-header--center {
+    text-align: center;
+    margin-bottom: var(--space-4xl);
+  }
+
+  /* ====== PROJECTS ====== */
+  .section--projects {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-primary) 30%, var(--bg-deep) 100%);
+  }
+
+  .projects-bg-glow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(56, 189, 248, 0.06) 0%, rgba(129, 140, 248, 0.03) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    position: relative;
+    z-index: 1;
+  }
+
+  .project-featured-wrapper {
+    grid-column: 1 / -1;
+    position: relative;
+  }
+
+  .featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-cyan);
+    margin-bottom: var(--space-md);
+    padding: 6px 14px;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    border-radius: var(--radius-full);
+  }
+
+  /* ====== PROJECT CARD STYLES (global for React component) ====== */
+  :global(.project-card) {
+    position: relative;
+    display: block;
+    padding: var(--space-2xl) var(--space-xl);
+    background: rgba(20, 24, 44, 0.6);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-slow);
+    overflow: hidden;
+    cursor: default;
+    text-decoration: none;
+    color: inherit;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  :global(a.project-card) {
+    cursor: pointer;
+  }
+
+  :global(.project-card:hover) {
+    border-color: rgba(56, 189, 248, 0.25);
+    transform: translateY(-6px);
+    box-shadow:
+      0 0 40px rgba(56, 189, 248, 0.1),
+      0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  :global(.project-card--featured) {
+    padding: var(--space-3xl) var(--space-2xl);
+    background: linear-gradient(135deg, rgba(20, 24, 44, 0.8) 0%, rgba(56, 189, 248, 0.05) 50%, rgba(129, 140, 248, 0.05) 100%);
+    border-color: rgba(56, 189, 248, 0.12);
+  }
+
+  :global(.project-card--featured:hover) {
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow:
+      0 0 80px rgba(56, 189, 248, 0.12),
+      0 30px 80px rgba(0, 0, 0, 0.4);
+  }
+
+  :global(.project-card__spotlight) {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.07), transparent 40%);
+    opacity: var(--glow-opacity, 0);
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+  }
+
+  :global(.project-card__border-glow) {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  :global(.project-card:hover .project-card__border-glow) {
+    opacity: 0.5;
+  }
+
+  :global(.project-card__content) {
+    position: relative;
+    z-index: 1;
+  }
+
+  :global(.project-card__header) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-xl);
+  }
+
+  :global(.project-card__icon-wrap) {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.12);
+    border-radius: var(--radius-md);
+  }
+
+  :global(.project-card__icon) {
+    font-size: 1.4rem;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  :global(.project-card__status) {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: var(--radius-full);
+    border: 1px solid;
+    letter-spacing: 0.02em;
+  }
+
+  :global(.status-dot) {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: pulse-glow 2s infinite;
+  }
+
+  :global(.project-card__title) {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  :global(.project-card--featured .project-card__title) {
+    font-size: 1.6rem;
+  }
+
+  :global(.project-card__desc) {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+  }
+
+  :global(.project-card--featured .project-card__desc) {
+    font-size: 0.95rem;
+    max-width: 640px;
+  }
+
+  :global(.project-card__tech) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  :global(.tech-tag) {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  :global(.project-card__link) {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    transition: gap var(--transition-base);
+  }
+
+  :global(.project-card:hover .project-card__link) {
+    gap: var(--space-md);
+  }
+
+  /* ====== TEAM ====== */
+  .section--team {
+    background: var(--bg-deep);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .team-card {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-lg);
+    background: rgba(20, 24, 44, 0.4);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .team-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .team-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(56, 189, 248, 0.2);
+    background: rgba(20, 24, 44, 0.7);
+    box-shadow:
+      0 0 40px rgba(56, 189, 248, 0.08),
+      0 20px 50px rgba(0, 0, 0, 0.3);
+  }
+
+  .team-card:hover::before {
+    opacity: 0.6;
+  }
+
+  .team-avatar {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .avatar-glow {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.2), transparent 70%);
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .avatar-glow--blue {
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.2), transparent 70%);
+    animation-delay: 0.5s;
+  }
+
+  .avatar-glow--purple {
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.2), transparent 70%);
+    animation-delay: 1s;
+  }
+
+  .avatar-glow--pink {
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.2), transparent 70%);
+    animation-delay: 1.5s;
+  }
+
+  .avatar-ring {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.15));
+    border: 2px solid rgba(56, 189, 248, 0.3);
+    transition: all var(--transition-base);
+  }
+
+  .avatar-ring--blue {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(56, 189, 248, 0.15));
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+
+  .avatar-ring--purple {
+    background: linear-gradient(135deg, rgba(129, 140, 248, 0.15), rgba(168, 85, 247, 0.15));
+    border-color: rgba(129, 140, 248, 0.3);
+  }
+
+  .avatar-ring--pink {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15));
+    border-color: rgba(168, 85, 247, 0.3);
+  }
+
+  .team-card:hover .avatar-ring {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+  }
+
+  .avatar-emoji {
+    font-size: 2rem;
+  }
+
+  .team-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  .team-role {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-md);
+  }
+
+  .team-bio {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+  }
+
+  .team-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    justify-content: center;
+  }
+
+  .team-tag {
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+  }
+
+  /* ====== ABOUT ====== */
+  .section--about {
+    background: var(--bg-primary);
+  }
+
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: start;
+  }
+
+  .about-body {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-top: var(--space-lg);
+  }
+
+  .about-values {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .value-card {
+    padding: var(--space-xl);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+  }
+
+  .value-card:hover {
+    border-color: var(--border-accent);
+    background: var(--bg-elevated);
+  }
+
+  .value-icon {
+    font-size: 1.2rem;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    margin-bottom: var(--space-md);
+  }
+
+  .value-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    color: var(--text-primary);
+  }
+
+  .value-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ====== CONTACT/CTA ====== */
+  .section--contact {
+    text-align: center;
+  }
+
+  .cta-block {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-lg);
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 1024px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+      grid-template-columns: 1fr;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .about-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observerCallback: IntersectionObserverCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        el.style.opacity = "";
+        el.style.transform = "";
+        el.classList.add("animate-in");
+        animObserver.unobserve(el);
+      }
+    });
+  };
+
+  const animObserver = new IntersectionObserver(observerCallback, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -30px 0px",
+  });
+
+  // Animate sections on scroll
+  const selectors = [
+    ".section-header",
+    ".section-header--center",
+    ".project-featured-wrapper",
+    ".team-card",
+    ".value-card",
+    ".about-text",
+    ".cta-block",
+  ];
+
+  document.querySelectorAll(selectors.join(", ")).forEach((el, i) => {
+    const htmlEl = el as HTMLElement;
+    htmlEl.style.opacity = "0";
+    htmlEl.style.transform = "translateY(30px)";
+    htmlEl.style.transition = `opacity 0.6s ease ${i * 0.05}s, transform 0.6s ease ${i * 0.05}s`;
+    animObserver.observe(htmlEl);
+  });
+</script>
