@@ -1,0 +1,126 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="404 — Page Not Found | CatSoup Studios"
+  description="The page you're looking for doesn't exist. Head back to CatSoup Studios homepage."
+>
+  <Navbar />
+
+  <section class="error-page">
+    <div class="error-orbs">
+      <div class="error-orb error-orb--1"></div>
+      <div class="error-orb error-orb--2"></div>
+    </div>
+    <div class="error-content">
+      <span class="error-code">404</span>
+      <h1 class="error-title">
+        Lost in the <span class="gradient-text--aurora">void</span>
+      </h1>
+      <p class="error-desc">
+        This page doesn't exist — or maybe it drifted into another dimension.
+        Let's get you back home.
+      </p>
+      <a href="/" class="btn-primary btn-lg">
+        <span>Back to Home</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .error-page {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .error-orbs {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .error-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.25;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .error-orb--1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.3), transparent 70%);
+    top: 10%;
+    left: 20%;
+  }
+
+  .error-orb--2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.2), transparent 70%);
+    bottom: 10%;
+    right: 15%;
+    animation-delay: 3s;
+  }
+
+  .error-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: var(--space-3xl) var(--space-xl);
+    max-width: 560px;
+  }
+
+  .error-code {
+    display: block;
+    font-size: clamp(6rem, 20vw, 12rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    background: linear-gradient(
+      135deg,
+      rgba(56, 189, 248, 0.15),
+      rgba(129, 140, 248, 0.1),
+      rgba(236, 72, 153, 0.08)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: var(--space-lg);
+    user-select: none;
+  }
+
+  .error-title {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: var(--space-lg);
+    letter-spacing: -0.03em;
+  }
+
+  .error-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-2xl);
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+</style>
