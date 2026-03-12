@@ -5,12 +5,78 @@ interface Props {
 }
 
 const {
-  title = "CatSoup Studios — We Build Digital Experiences",
-  description = "CatSoup Studios is an indie studio crafting premium digital products. Explore Aurora and our upcoming projects.",
+  title = "CatSoup Studios — Indie Game & App Studio | Creators of Auroriah",
+  description = "CatSoup Studios is an indie studio building premium digital products. Discover Auroriah — a privacy-first social platform with end-to-end encryption, real-time chat, and a vibrant community.",
 } = Astro.props;
 
 const siteUrl = "https://catsoupstudios.com";
 const ogImage = `${siteUrl}/og-image.png`;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "CatSoup Studios",
+  alternateName: ["Cat Soup Studios", "CatSoupStudios"],
+  url: siteUrl,
+  logo: `${siteUrl}/favicon.svg`,
+  description: "Indie studio crafting premium digital products — apps, tools, and creative software.",
+  foundingDate: "2025",
+  sameAs: [
+    "https://twitter.com/catsoupstudios",
+    "https://github.com/catsoupstudios",
+    "https://instagram.com/catsoupstudios",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "hello@catsoupstudios.com",
+    contactType: "customer support",
+  },
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Auroriah",
+  alternateName: ["Auroria", "Auroriah App", "Auroriah Social"],
+  applicationCategory: "SocialNetworkingApplication",
+  operatingSystem: "iOS, Android, Windows, macOS",
+  description: "A premium social platform with end-to-end encryption, real-time presence, customizable profiles, and a unique community-driven Aura system. Built with privacy-first architecture.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  author: {
+    "@type": "Organization",
+    name: "CatSoup Studios",
+    url: siteUrl,
+  },
+  featureList: [
+    "End-to-End Encryption",
+    "Real-Time Chat & Presence",
+    "Customizable Profiles",
+    "Aura Farming System",
+    "Voice Channels",
+    "Servers & Communities",
+    "Cross-Platform (iOS, Android, Desktop)",
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  description: description,
+  url: siteUrl,
+  publisher: {
+    "@type": "Organization",
+    name: "CatSoup Studios",
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteUrl}/favicon.svg`,
+    },
+  },
+};
 ---
 
 <!doctype html>
@@ -18,40 +84,88 @@ const ogImage = `${siteUrl}/og-image.png`;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- SEO -->
+    <!-- Primary SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="CatSoup Studios" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="keywords" content="Auroriah, Auroria, CatSoup Studios, Cat Soup Studios, social app, encrypted messaging, privacy app, indie studio, Auroriah app, Auroriah social, end-to-end encryption, social platform, private messenger, community app, aura system, voice channels, real-time chat" />
     <link rel="canonical" href={siteUrl} />
 
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="CatSoup Studios — Creators of Auroriah" />
     <meta property="og:url" content={siteUrl} />
     <meta property="og:site_name" content="CatSoup Studios" />
+    <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter -->
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@catsoupstudios" />
+    <meta name="twitter:creator" content="@catsoupstudios" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="CatSoup Studios — Creators of Auroriah" />
+
+    <!-- Mobile / PWA -->
+    <meta name="theme-color" content="#0d0518" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="CatSoup Studios" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dpn7m5qur/image/upload/v1773290751/logo-csp_hvdktt.png" />
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dpn7m5qur/image/upload/v1773290751/logo-csp_hvdktt.png" />
 
-    <!-- Styles -->
+    <!-- Fonts (preconnect + preload for better LCP) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
+    <!-- Structured Data: Software Application (Auroriah) -->
+    <script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} />
+
+    <!-- Structured Data: WebPage -->
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+
+    <!-- Generator -->
+    <meta name="generator" content={Astro.generator} />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <slot />
   </body>
 </html>
 
 <style is:global>
   @import "../styles/global.css";
+
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-cyan);
+    color: #0d0518;
+    font-weight: 600;
+    z-index: 9999;
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
 </style>

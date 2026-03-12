@@ -14,29 +14,153 @@ import ProjectCard from "../components/ProjectCard";
     <div class="hero-bg">
       <ParticleBackground client:only="react" />
     </div>
-    <div class="hero-content container">
+    <div class="hero-orbs">
+      <div class="hero-orb hero-orb--1"></div>
+      <div class="hero-orb hero-orb--2"></div>
+      <div class="hero-orb hero-orb--3"></div>
+    </div>
+    <main class="hero-content container" id="main-content">
       <div class="hero-badge animate-in">
         <span class="badge-dot"></span>
-        Indie Studio · Crafting Digital Experiences
+        <span class="badge-label">Indie Studio · Building the Future</span>
       </div>
       <h1 class="hero-title animate-in animate-in-delay-1">
-        We build products<br />people
-        <span class="gradient-text">love to use</span>
+        We craft products<br />people
+        <span class="gradient-text--aurora">LOVE</span>
+        <span class="hero-title-light">to use</span>
       </h1>
-      <p class="hero-subtitle animate-in animate-in-delay-2">
-        CatSoup Studios is a small, passionate team building premium apps
-        and digital experiences. Quality over quantity, always.
+      <p class="hero-subtitle animate-in animate-in-delay-2" id="typewriter-text">
+        <span class="typewriter-cursor">&nbsp;</span>
       </p>
       <div class="hero-actions animate-in animate-in-delay-3">
         <a href="#projects" class="btn-primary">
-          Explore our work
+          <span>Explore our work</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
+        <a href="#contact" class="btn-secondary">
+          Get in touch
+        </a>
+      </div>
+      <div class="hero-stats animate-in animate-in-delay-4">
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="3">0</span>
+          <span class="hero-stat-label">Products</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="4">0</span>
+          <span class="hero-stat-label">Team Members</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-number">E2E</span>
+          <span class="hero-stat-label">Encrypted</span>
+        </div>
+      </div>
+    </main>
+    <div class="hero-fade"></div>
+    <div class="hero-grid-pattern"></div>
+  </section>
+
+  <!-- ====== ABOUT ====== -->
+  <section class="section section--about" id="about">
+    <div class="about-glow"></div>
+    <div class="container">
+      <div class="about-bento">
+        <div class="bento-main">
+          <span class="section-label">◈ About Us</span>
+          <h2 class="section-title">
+            Small team,<br /><span class="gradient-text">massive vision</span>
+          </h2>
+          <p class="about-desc">
+            We're <strong>CatSoup Studios</strong> — an indie team obsessed with building
+            beautiful, functional, and delightful digital products. No bloated feature lists,
+            no corporate compromises. Just thoughtful software built with love.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <span class="highlight-icon">🔒</span>
+              <span class="highlight-text">Privacy by default</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">⚡</span>
+              <span class="highlight-text">Lightning fast</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">🎨</span>
+              <span class="highlight-text">Pixel-perfect</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card bento-card--quality">
+          <div class="bento-card-icon">◈</div>
+          <h3 class="bento-card-title">Quality First</h3>
+          <p class="bento-card-desc">Every detail matters. We ship when it's ready, not when the calendar says so.</p>
+        </div>
+
+        <div class="bento-card bento-card--privacy">
+          <div class="bento-card-icon">◇</div>
+          <h3 class="bento-card-title">Privacy by Design</h3>
+          <p class="bento-card-desc">Your data is yours. End-to-end encryption and zero-knowledge architecture.</p>
+        </div>
+
+        <div class="bento-card bento-card--open">
+          <div class="bento-card-icon">△</div>
+          <h3 class="bento-card-title">Open Source Spirit</h3>
+          <p class="bento-card-desc">We give back to the community. Tools and knowledge, shared freely.</p>
+        </div>
       </div>
     </div>
-    <div class="hero-fade"></div>
+  </section>
+
+  <!-- ====== FEATURES ====== -->
+  <section class="section section--features" id="features">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-label">✦ Why Auroriah</span>
+        <h2 class="section-title" style="text-align:center;">
+          Everything you need,<br /><span class="gradient-text--aurora">nothing you don't</span>
+        </h2>
+        <p class="section-subtitle" style="margin:0 auto;">
+          Auroriah is the social platform built for people who care about privacy, design, and community.
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrap"><span class="feature-icon">🔐</span></div>
+          <h3 class="feature-title">End-to-End Encrypted</h3>
+          <p class="feature-desc">Messages, calls, and files — all encrypted by default. Not even we can read them.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-wrap--purple"><span class="feature-icon">💬</span></div>
+          <h3 class="feature-title">Real-Time Chat</h3>
+          <p class="feature-desc">Instant messaging with rich media, reactions, threads, and lightning-fast delivery.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-wrap--pink"><span class="feature-icon">🎙️</span></div>
+          <h3 class="feature-title">Voice Channels</h3>
+          <p class="feature-desc">Drop into voice channels with your community. Crystal clear audio, zero latency.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-wrap--amber"><span class="feature-icon">✨</span></div>
+          <h3 class="feature-title">Aura System</h3>
+          <p class="feature-desc">Earn Aura through engagement. Unlock cosmetics, decorations, and exclusive rewards.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-wrap--emerald"><span class="feature-icon">🎨</span></div>
+          <h3 class="feature-title">Custom Profiles</h3>
+          <p class="feature-desc">Express yourself with ring decorations, card borders, banners, and animated effects.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap feature-icon-wrap--blue"><span class="feature-icon">📱</span></div>
+          <h3 class="feature-title">Cross-Platform</h3>
+          <p class="feature-desc">Available on iOS, Android, Windows, and macOS. Your world, everywhere you go.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ====== PROJECTS ====== -->
@@ -44,7 +168,7 @@ import ProjectCard from "../components/ProjectCard";
     <div class="projects-bg-glow"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Our Work</span>
+        <span class="section-label">★ Our Work</span>
         <h2 class="section-title">
           Projects we're<br /><span class="gradient-text">proud of</span>
         </h2>
@@ -64,19 +188,19 @@ import ProjectCard from "../components/ProjectCard";
           <ProjectCard
             client:visible
             title="Auroriah"
-            description="A premium social platform with end-to-end encryption, real-time presence, and a vibrant community experience. Built with privacy-first architecture, featuring encrypted DMs, live status, customizable profiles, and a unique Aura farming system."
+            description="A premium social platform with end-to-end encryption, real-time presence, and a vibrant community experience. Privacy-first architecture with encrypted DMs, live voice channels, customizable profiles, and the unique Aura farming system."
             status="live"
             featured={true}
             icon="✦"
             href="#"
-            techStack={["React", "TypeScript", "Firebase", "E2EE", "Electron"]}
+            techStack={["React Native", "TypeScript", "Firebase", "E2EE", "Electron"]}
           />
         </div>
 
         <ProjectCard
           client:visible
           title="Project Nebula"
-          description="Our next venture — a creative toolkit for digital artists. Stay tuned for something special."
+          description="Our next venture — a creative toolkit for digital artists. Stay tuned for something extraordinary."
           status="coming-soon"
           icon="◇"
           techStack={["Coming 2026"]}
@@ -97,9 +221,9 @@ import ProjectCard from "../components/ProjectCard";
   <section class="section section--team" id="team">
     <div class="container">
       <div class="section-header section-header--center">
-        <span class="section-label">The Team</span>
-        <h2 class="section-title">
-          The people behind<br /><span class="gradient-text">the magic</span>
+        <span class="section-label">♦ The Team</span>
+        <h2 class="section-title" style="text-align:center;">
+          The people behind<br /><span class="gradient-text--warm">the magic</span>
         </h2>
         <p class="section-subtitle" style="margin: 0 auto;">
           A small but mighty crew, obsessed with building the best.
@@ -107,7 +231,8 @@ import ProjectCard from "../components/ProjectCard";
       </div>
 
       <div class="team-grid">
-        <div class="team-card">
+        <div class="team-card" data-tilt>
+          <div class="team-card-shine"></div>
           <div class="team-avatar">
             <div class="avatar-glow"></div>
             <div class="avatar-ring">
@@ -117,13 +242,14 @@ import ProjectCard from "../components/ProjectCard";
           <h3 class="team-name">Orianna</h3>
           <span class="team-role">CEO & Founder</span>
           <p class="team-bio">Visionary leader driving strategy, product direction, and the overall CatSoup mission.</p>
-          <div class="team-socials">
+          <div class="team-tags">
             <span class="team-tag">Strategy</span>
             <span class="team-tag">Product</span>
           </div>
         </div>
 
-        <div class="team-card">
+        <div class="team-card" data-tilt>
+          <div class="team-card-shine"></div>
           <div class="team-avatar">
             <div class="avatar-glow avatar-glow--blue"></div>
             <div class="avatar-ring avatar-ring--blue">
@@ -131,16 +257,17 @@ import ProjectCard from "../components/ProjectCard";
             </div>
           </div>
           <h3 class="team-name">Astra</h3>
-          <span class="team-role">Lead Developer</span>
+          <span class="team-role team-role--blue">Lead Developer</span>
           <p class="team-bio">Full-stack engineer and architect. Turns complex ideas into elegant, working code.</p>
-          <div class="team-socials">
+          <div class="team-tags">
             <span class="team-tag">React</span>
             <span class="team-tag">TypeScript</span>
             <span class="team-tag">Node.js</span>
           </div>
         </div>
 
-        <div class="team-card">
+        <div class="team-card" data-tilt>
+          <div class="team-card-shine"></div>
           <div class="team-avatar">
             <div class="avatar-glow avatar-glow--purple"></div>
             <div class="avatar-ring avatar-ring--purple">
@@ -148,15 +275,16 @@ import ProjectCard from "../components/ProjectCard";
             </div>
           </div>
           <h3 class="team-name">Yulit</h3>
-          <span class="team-role">QA Engineer</span>
+          <span class="team-role team-role--purple">QA Engineer</span>
           <p class="team-bio">Quality guardian. If there's a bug, she'll find it — and make sure it never comes back.</p>
-          <div class="team-socials">
+          <div class="team-tags">
             <span class="team-tag">Testing</span>
             <span class="team-tag">QA</span>
           </div>
         </div>
 
-        <div class="team-card">
+        <div class="team-card" data-tilt>
+          <div class="team-card-shine"></div>
           <div class="team-avatar">
             <div class="avatar-glow avatar-glow--pink"></div>
             <div class="avatar-ring avatar-ring--pink">
@@ -164,9 +292,9 @@ import ProjectCard from "../components/ProjectCard";
             </div>
           </div>
           <h3 class="team-name">DZDani</h3>
-          <span class="team-role">UI/UX Designer</span>
+          <span class="team-role team-role--pink">UI/UX Designer</span>
           <p class="team-bio">Pixel-perfect creative mind. Crafts interfaces that feel both beautiful and intuitive.</p>
-          <div class="team-socials">
+          <div class="team-tags">
             <span class="team-tag">UI/UX</span>
             <span class="team-tag">Figma</span>
             <span class="team-tag">Motion</span>
@@ -176,66 +304,27 @@ import ProjectCard from "../components/ProjectCard";
     </div>
   </section>
 
-  <!-- ====== ABOUT ====== -->
-  <section class="section section--about" id="about">
-    <div class="container">
-      <div class="about-layout">
-        <div class="about-text">
-          <span class="section-label">About Us</span>
-          <h2 class="section-title">
-            Small team,<br /><span class="gradient-text">big ambition</span>
-          </h2>
-          <p class="section-subtitle">
-            We're CatSoup Studios — an indie team obsessed with building
-            beautiful, functional, and delightful digital products.
-          </p>
-          <p class="about-body">
-            We believe the best software comes from small teams who care deeply
-            about every pixel and every interaction. No bloated feature lists,
-            no corporate compromises. Just thoughtful products built with love.
-          </p>
-        </div>
-        <div class="about-values">
-          <div class="value-card">
-            <span class="value-icon">◈</span>
-            <h3 class="value-title">Quality First</h3>
-            <p class="value-desc">Every detail matters. We ship when it's ready, not when the calendar says so.</p>
-          </div>
-          <div class="value-card">
-            <span class="value-icon">◇</span>
-            <h3 class="value-title">Privacy by Design</h3>
-            <p class="value-desc">Your data is yours. End-to-end encryption and zero-knowledge architecture.</p>
-          </div>
-          <div class="value-card">
-            <span class="value-icon">△</span>
-            <h3 class="value-title">Open Source Spirit</h3>
-            <p class="value-desc">We give back to the community that made us possible. Tools and knowledge, shared freely.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ====== CONTACT/CTA ====== -->
   <section class="section section--contact" id="contact">
+    <div class="cta-glow"></div>
     <div class="container">
       <div class="cta-block">
-        <span class="section-label">Get in Touch</span>
+        <span class="section-label">◈ Get in Touch</span>
         <h2 class="cta-title">
-          Let's build something<br /><span class="gradient-text">together</span>
+          Let's build something<br /><span class="gradient-text--aurora">extraordinary</span>
         </h2>
-        <p class="section-subtitle" style="margin: 0 auto var(--space-2xl);">
-          Have an idea? Want to collaborate? We'd love to hear from you.
+        <p class="cta-subtitle">
+          Have an idea? Want to collaborate? We'd love to hear from you. Drop us a line and let's create something amazing together.
         </p>
         <div class="cta-actions">
           <a href="mailto:hello@catsoupstudios.com" class="btn-primary btn-lg">
-            Say Hello
+            <span>Say Hello</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <a href="#" class="btn-ghost">
-            Join our Discord
+          <a href="#projects" class="btn-secondary">
+            Explore Auroriah
           </a>
         </div>
       </div>
@@ -256,10 +345,45 @@ import ProjectCard from "../components/ProjectCard";
     overflow: hidden;
   }
 
-  .hero-bg {
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+
+  .hero-orbs { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+    animation: float 8s ease-in-out infinite;
+  }
+  .hero-orb--1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(56,189,248,0.25), transparent 70%);
+    top: -10%; left: -10%;
+    animation-delay: 0s;
+  }
+  .hero-orb--2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(129,140,248,0.2), transparent 70%);
+    top: 20%; right: -5%;
+    animation-delay: 2s;
+  }
+  .hero-orb--3 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(236,72,153,0.15), transparent 70%);
+    bottom: 10%; left: 30%;
+    animation-delay: 4s;
+  }
+
+  .hero-grid-pattern {
     position: absolute;
     inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
     z-index: 0;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black, transparent);
   }
 
   .hero-content {
@@ -273,51 +397,106 @@ import ProjectCard from "../components/ProjectCard";
     display: inline-flex;
     align-items: center;
     gap: var(--space-sm);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 500;
     color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255,255,255,0.03);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-full);
     padding: var(--space-xs) var(--space-lg);
     margin-bottom: var(--space-2xl);
+    backdrop-filter: blur(10px);
   }
 
   .badge-dot {
-    width: 6px;
-    height: 6px;
+    width: 6px; height: 6px;
     border-radius: 50%;
-    background: var(--accent-cyan);
+    background: var(--accent-emerald);
+    box-shadow: 0 0 10px rgba(52,211,153,0.5);
     animation: pulse-glow 2s infinite;
   }
 
   .hero-title {
-    font-size: clamp(2.5rem, 7vw, 4.5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
     margin-bottom: var(--space-xl);
   }
 
-  .hero-subtitle {
-    font-size: 1.125rem;
+  .hero-title-light {
+    font-weight: 300;
     color: var(--text-secondary);
-    max-width: 520px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 540px;
     margin: 0 auto var(--space-2xl);
-    line-height: 1.7;
+    line-height: 1.8;
+    min-height: 3.6em;
+  }
+
+  .typewriter-cursor {
+    display: inline;
+    border-right: 2px solid var(--accent-cyan);
+    padding-right: 2px;
+    animation: blink-cursor 0.8s step-end infinite;
+  }
+
+  @keyframes blink-cursor {
+    0%, 100% { border-color: var(--accent-cyan); }
+    50% { border-color: transparent; }
   }
 
   .hero-actions {
     display: flex;
     gap: var(--space-md);
     justify-content: center;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2xl);
+    padding: var(--space-xl) var(--space-2xl);
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(10px);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .hero-stat { text-align: center; }
+  .hero-stat-number {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 800;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+  }
+  .hero-stat-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .hero-stat-divider {
+    width: 1px; height: 36px;
+    background: var(--border-subtle);
   }
 
   .hero-fade {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 0; left: 0; right: 0;
     height: 200px;
     background: linear-gradient(transparent, var(--bg-deep));
     z-index: 1;
@@ -344,25 +523,18 @@ import ProjectCard from "../components/ProjectCard";
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0);
+    background: rgba(255,255,255,0);
     transition: background var(--transition-fast);
   }
 
-  .btn-primary:hover::before {
-    background: rgba(255, 255, 255, 0.15);
-  }
+  .btn-primary:hover::before { background: rgba(255,255,255,0.15); }
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 8px 30px rgba(56,189,248,0.3);
   }
 
-  .btn-lg {
-    padding: var(--space-lg) var(--space-2xl);
-    font-size: 1rem;
-  }
-
-  .btn-ghost {
+  .btn-secondary {
     display: inline-flex;
     align-items: center;
     gap: var(--space-sm);
@@ -373,22 +545,237 @@ import ProjectCard from "../components/ProjectCard";
     border-radius: var(--radius-full);
     border: 1px solid var(--border-subtle);
     transition: all var(--transition-base);
+    background: rgba(255,255,255,0.02);
   }
 
-  .btn-ghost:hover {
+  .btn-secondary:hover {
     color: var(--text-primary);
     border-color: var(--border-accent);
-    background: rgba(56, 189, 248, 0.05);
+    background: rgba(56,189,248,0.05);
+    transform: translateY(-2px);
   }
 
-  /* ====== SECTION HEADERS ====== */
-  .section-header {
-    margin-bottom: var(--space-3xl);
+  .btn-lg {
+    padding: var(--space-lg) var(--space-2xl);
+    font-size: 1rem;
   }
 
-  .section-header--center {
+  /* ====== ABOUT BENTO ====== */
+  .section--about {
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 800px; height: 600px;
+    background: radial-gradient(ellipse, rgba(56,189,248,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .about-bento {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: var(--space-lg);
+    position: relative;
+    z-index: 1;
+  }
+
+  .bento-main {
+    grid-row: 1 / 4;
+    padding: var(--space-3xl) var(--space-2xl);
+    background: var(--gradient-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-top: var(--space-md);
+  }
+
+  .about-desc strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .about-highlights {
+    display: flex;
+    gap: var(--space-lg);
+    margin-top: var(--space-2xl);
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+  }
+
+  .highlight-icon { font-size: 1rem; }
+
+  .bento-card {
+    padding: var(--space-xl);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bento-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 15%; right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .bento-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(56,189,248,0.15);
+    background: var(--bg-card-hover);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+
+  .bento-card:hover::after { opacity: 0.4; }
+
+  .bento-card-icon {
+    font-size: 1.3rem;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: var(--space-md);
+  }
+
+  .bento-card--privacy .bento-card-icon {
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bento-card--open .bento-card-icon {
+    background: var(--gradient-aurora);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bento-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .bento-card-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* ====== FEATURES ====== */
+  .section--features {
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-deep) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-header { margin-bottom: var(--space-3xl); }
+  .section-header--center { text-align: center; margin-bottom: var(--space-4xl); }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .feature-card {
+    padding: var(--space-2xl) var(--space-xl);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-slow);
     text-align: center;
-    margin-bottom: var(--space-4xl);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(56,189,248,0.15);
+    box-shadow: 0 16px 50px rgba(0,0,0,0.3);
+  }
+
+  .feature-icon-wrap {
+    width: 56px; height: 56px;
+    margin: 0 auto var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(56,189,248,0.08);
+    border: 1px solid rgba(56,189,248,0.15);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+  }
+
+  .feature-card:hover .feature-icon-wrap {
+    box-shadow: 0 0 30px rgba(56,189,248,0.15);
+    transform: scale(1.05);
+  }
+
+  .feature-icon-wrap--purple {
+    background: rgba(129,140,248,0.08);
+    border-color: rgba(129,140,248,0.15);
+  }
+  .feature-icon-wrap--pink {
+    background: rgba(236,72,153,0.08);
+    border-color: rgba(236,72,153,0.15);
+  }
+  .feature-icon-wrap--amber {
+    background: rgba(245,158,11,0.08);
+    border-color: rgba(245,158,11,0.15);
+  }
+  .feature-icon-wrap--emerald {
+    background: rgba(52,211,153,0.08);
+    border-color: rgba(52,211,153,0.15);
+  }
+  .feature-icon-wrap--blue {
+    background: rgba(96,165,250,0.08);
+    border-color: rgba(96,165,250,0.15);
+  }
+
+  .feature-icon { font-size: 1.5rem; }
+
+  .feature-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .feature-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
   }
 
   /* ====== PROJECTS ====== */
@@ -400,14 +787,11 @@ import ProjectCard from "../components/ProjectCard";
 
   .projects-bg-glow {
     position: absolute;
-    top: 20%;
-    left: 50%;
+    top: 20%; left: 50%;
     transform: translateX(-50%);
-    width: 800px;
-    height: 400px;
-    background: radial-gradient(ellipse, rgba(56, 189, 248, 0.06) 0%, rgba(129, 140, 248, 0.03) 50%, transparent 70%);
+    width: 800px; height: 400px;
+    background: radial-gradient(ellipse, rgba(56,189,248,0.06) 0%, rgba(129,140,248,0.03) 50%, transparent 70%);
     pointer-events: none;
-    z-index: 0;
   }
 
   .projects-grid {
@@ -434,17 +818,17 @@ import ProjectCard from "../components/ProjectCard";
     color: var(--accent-cyan);
     margin-bottom: var(--space-md);
     padding: 6px 14px;
-    background: rgba(56, 189, 248, 0.08);
-    border: 1px solid rgba(56, 189, 248, 0.15);
+    background: rgba(56,189,248,0.08);
+    border: 1px solid rgba(56,189,248,0.15);
     border-radius: var(--radius-full);
   }
 
-  /* ====== PROJECT CARD STYLES (global for React component) ====== */
+  /* ====== PROJECT CARD (global for React) ====== */
   :global(.project-card) {
     position: relative;
     display: block;
     padding: var(--space-2xl) var(--space-xl);
-    background: rgba(20, 24, 44, 0.6);
+    background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     transition: all var(--transition-slow);
@@ -456,35 +840,29 @@ import ProjectCard from "../components/ProjectCard";
     -webkit-backdrop-filter: blur(10px);
   }
 
-  :global(a.project-card) {
-    cursor: pointer;
-  }
+  :global(a.project-card) { cursor: pointer; }
 
   :global(.project-card:hover) {
-    border-color: rgba(56, 189, 248, 0.25);
+    border-color: rgba(56,189,248,0.25);
     transform: translateY(-6px);
-    box-shadow:
-      0 0 40px rgba(56, 189, 248, 0.1),
-      0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 40px rgba(56,189,248,0.1), 0 20px 60px rgba(0,0,0,0.3);
   }
 
   :global(.project-card--featured) {
     padding: var(--space-3xl) var(--space-2xl);
-    background: linear-gradient(135deg, rgba(20, 24, 44, 0.8) 0%, rgba(56, 189, 248, 0.05) 50%, rgba(129, 140, 248, 0.05) 100%);
-    border-color: rgba(56, 189, 248, 0.12);
+    background: linear-gradient(135deg, rgba(20,24,44,0.8) 0%, rgba(56,189,248,0.05) 50%, rgba(129,140,248,0.05) 100%);
+    border-color: rgba(56,189,248,0.12);
   }
 
   :global(.project-card--featured:hover) {
-    border-color: rgba(56, 189, 248, 0.35);
-    box-shadow:
-      0 0 80px rgba(56, 189, 248, 0.12),
-      0 30px 80px rgba(0, 0, 0, 0.4);
+    border-color: rgba(56,189,248,0.35);
+    box-shadow: 0 0 80px rgba(56,189,248,0.12), 0 30px 80px rgba(0,0,0,0.4);
   }
 
   :global(.project-card__spotlight) {
     position: absolute;
     inset: 0;
-    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.07), transparent 40%);
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56,189,248,0.07), transparent 40%);
     opacity: var(--glow-opacity, 0);
     transition: opacity var(--transition-base);
     pointer-events: none;
@@ -492,23 +870,16 @@ import ProjectCard from "../components/ProjectCard";
 
   :global(.project-card__border-glow) {
     position: absolute;
-    top: 0;
-    left: 10%;
-    right: 10%;
+    top: 0; left: 10%; right: 10%;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
     opacity: 0;
     transition: opacity var(--transition-base);
   }
 
-  :global(.project-card:hover .project-card__border-glow) {
-    opacity: 0.5;
-  }
+  :global(.project-card:hover .project-card__border-glow) { opacity: 0.5; }
 
-  :global(.project-card__content) {
-    position: relative;
-    z-index: 1;
-  }
+  :global(.project-card__content) { position: relative; z-index: 1; }
 
   :global(.project-card__header) {
     display: flex;
@@ -518,13 +889,12 @@ import ProjectCard from "../components/ProjectCard";
   }
 
   :global(.project-card__icon-wrap) {
-    width: 48px;
-    height: 48px;
+    width: 48px; height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(56, 189, 248, 0.08);
-    border: 1px solid rgba(56, 189, 248, 0.12);
+    background: rgba(56,189,248,0.08);
+    border: 1px solid rgba(56,189,248,0.12);
     border-radius: var(--radius-md);
   }
 
@@ -549,8 +919,7 @@ import ProjectCard from "../components/ProjectCard";
   }
 
   :global(.status-dot) {
-    width: 6px;
-    height: 6px;
+    width: 6px; height: 6px;
     border-radius: 50%;
     animation: pulse-glow 2s infinite;
   }
@@ -563,9 +932,7 @@ import ProjectCard from "../components/ProjectCard";
     letter-spacing: -0.01em;
   }
 
-  :global(.project-card--featured .project-card__title) {
-    font-size: 1.6rem;
-  }
+  :global(.project-card--featured .project-card__title) { font-size: 1.6rem; }
 
   :global(.project-card__desc) {
     font-size: 0.9rem;
@@ -591,7 +958,7 @@ import ProjectCard from "../components/ProjectCard";
     font-weight: 500;
     padding: 4px 10px;
     border-radius: var(--radius-full);
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255,255,255,0.04);
     border: 1px solid var(--border-subtle);
     color: var(--text-muted);
     letter-spacing: 0.02em;
@@ -607,9 +974,7 @@ import ProjectCard from "../components/ProjectCard";
     transition: gap var(--transition-base);
   }
 
-  :global(.project-card:hover .project-card__link) {
-    gap: var(--space-md);
-  }
+  :global(.project-card:hover .project-card__link) { gap: var(--space-md); }
 
   /* ====== TEAM ====== */
   .section--team {
@@ -627,20 +992,28 @@ import ProjectCard from "../components/ProjectCard";
   .team-card {
     text-align: center;
     padding: var(--space-2xl) var(--space-lg);
-    background: rgba(20, 24, 44, 0.4);
+    background: var(--bg-card);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     transition: all var(--transition-slow);
     position: relative;
     overflow: hidden;
   }
 
+  .team-card-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.03) 50%, transparent 60%);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .team-card:hover .team-card-shine { opacity: 1; }
+
   .team-card::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 20%;
-    right: 20%;
+    top: 0; left: 15%; right: 15%;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
     opacity: 0;
@@ -649,83 +1022,71 @@ import ProjectCard from "../components/ProjectCard";
 
   .team-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(56, 189, 248, 0.2);
-    background: rgba(20, 24, 44, 0.7);
-    box-shadow:
-      0 0 40px rgba(56, 189, 248, 0.08),
-      0 20px 50px rgba(0, 0, 0, 0.3);
+    border-color: rgba(56,189,248,0.2);
+    background: var(--bg-card-hover);
+    box-shadow: 0 0 50px rgba(56,189,248,0.08), 0 20px 50px rgba(0,0,0,0.3);
   }
 
-  .team-card:hover::before {
-    opacity: 0.6;
-  }
+  .team-card:hover::before { opacity: 0.6; }
 
   .team-avatar {
     position: relative;
-    width: 88px;
-    height: 88px;
+    width: 88px; height: 88px;
     margin: 0 auto var(--space-xl);
   }
 
   .avatar-glow {
     position: absolute;
-    inset: -8px;
+    inset: -12px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.2), transparent 70%);
+    background: radial-gradient(circle, rgba(56,189,248,0.2), transparent 70%);
     animation: float 4s ease-in-out infinite;
   }
 
   .avatar-glow--blue {
-    background: radial-gradient(circle, rgba(96, 165, 250, 0.2), transparent 70%);
+    background: radial-gradient(circle, rgba(96,165,250,0.2), transparent 70%);
     animation-delay: 0.5s;
   }
-
   .avatar-glow--purple {
-    background: radial-gradient(circle, rgba(129, 140, 248, 0.2), transparent 70%);
+    background: radial-gradient(circle, rgba(129,140,248,0.2), transparent 70%);
     animation-delay: 1s;
   }
-
   .avatar-glow--pink {
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.2), transparent 70%);
+    background: radial-gradient(circle, rgba(168,85,247,0.2), transparent 70%);
     animation-delay: 1.5s;
   }
 
   .avatar-ring {
     position: relative;
-    width: 88px;
-    height: 88px;
+    width: 88px; height: 88px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.15));
-    border: 2px solid rgba(56, 189, 248, 0.3);
+    background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(129,140,248,0.15));
+    border: 2px solid rgba(56,189,248,0.3);
     transition: all var(--transition-base);
   }
 
   .avatar-ring--blue {
-    background: linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(56, 189, 248, 0.15));
-    border-color: rgba(96, 165, 250, 0.3);
+    background: linear-gradient(135deg, rgba(96,165,250,0.15), rgba(56,189,248,0.15));
+    border-color: rgba(96,165,250,0.3);
   }
-
   .avatar-ring--purple {
-    background: linear-gradient(135deg, rgba(129, 140, 248, 0.15), rgba(168, 85, 247, 0.15));
-    border-color: rgba(129, 140, 248, 0.3);
+    background: linear-gradient(135deg, rgba(129,140,248,0.15), rgba(168,85,247,0.15));
+    border-color: rgba(129,140,248,0.3);
   }
-
   .avatar-ring--pink {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15));
-    border-color: rgba(168, 85, 247, 0.3);
+    background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(236,72,153,0.15));
+    border-color: rgba(168,85,247,0.3);
   }
 
   .team-card:hover .avatar-ring {
     border-color: var(--accent-cyan);
-    box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+    box-shadow: 0 0 30px rgba(56,189,248,0.15);
   }
 
-  .avatar-emoji {
-    font-size: 2rem;
-  }
+  .avatar-emoji { font-size: 2rem; }
 
   .team-name {
     font-size: 1.1rem;
@@ -736,13 +1097,17 @@ import ProjectCard from "../components/ProjectCard";
 
   .team-role {
     display: block;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--accent-cyan);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: var(--space-md);
   }
+
+  .team-role--blue { color: var(--accent-blue); }
+  .team-role--purple { color: var(--accent-purple); }
+  .team-role--pink { color: var(--accent-pink); }
 
   .team-bio {
     font-size: 0.82rem;
@@ -751,7 +1116,7 @@ import ProjectCard from "../components/ProjectCard";
     margin-bottom: var(--space-lg);
   }
 
-  .team-socials {
+  .team-tags {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-xs);
@@ -763,89 +1128,48 @@ import ProjectCard from "../components/ProjectCard";
     font-weight: 500;
     padding: 3px 10px;
     border-radius: var(--radius-full);
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255,255,255,0.04);
     border: 1px solid var(--border-subtle);
     color: var(--text-muted);
     letter-spacing: 0.03em;
   }
 
-  /* ====== ABOUT ====== */
-  .section--about {
-    background: var(--bg-primary);
-  }
-
-  .about-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-4xl);
-    align-items: start;
-  }
-
-  .about-body {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-top: var(--space-lg);
-  }
-
-  .about-values {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xl);
-  }
-
-  .value-card {
-    padding: var(--space-xl);
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-    transition: all var(--transition-base);
-  }
-
-  .value-card:hover {
-    border-color: var(--border-accent);
-    background: var(--bg-elevated);
-  }
-
-  .value-icon {
-    font-size: 1.2rem;
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: block;
-    margin-bottom: var(--space-md);
-  }
-
-  .value-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: var(--space-xs);
-    color: var(--text-primary);
-  }
-
-  .value-desc {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
   /* ====== CONTACT/CTA ====== */
   .section--contact {
     text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 700px; height: 400px;
+    background: radial-gradient(ellipse, rgba(56,189,248,0.06) 0%, rgba(168,85,247,0.04) 40%, transparent 70%);
+    pointer-events: none;
   }
 
   .cta-block {
     max-width: 640px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
 
   .cta-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     margin-bottom: var(--space-lg);
+  }
+
+  .cta-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--space-2xl);
   }
 
   .cta-actions {
@@ -857,35 +1181,22 @@ import ProjectCard from "../components/ProjectCard";
 
   /* ====== RESPONSIVE ====== */
   @media (max-width: 1024px) {
-    .team-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-bento { grid-template-columns: 1fr 1fr; }
+    .bento-main { grid-row: auto; grid-column: 1 / -1; }
   }
 
   @media (max-width: 768px) {
-    .hero-title {
-      font-size: 2.2rem;
-    }
-
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .team-grid {
-      grid-template-columns: 1fr;
-      max-width: 360px;
-      margin: 0 auto;
-    }
-
-    .about-layout {
-      grid-template-columns: 1fr;
-      gap: var(--space-2xl);
-    }
-
-    .cta-actions {
-      flex-direction: column;
-      align-items: center;
-    }
+    .hero-title { font-size: 2.4rem; }
+    .hero-stats { flex-direction: column; gap: var(--space-lg); max-width: 260px; }
+    .hero-stat-divider { width: 60px; height: 1px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+    .features-grid { grid-template-columns: 1fr; }
+    .about-bento { grid-template-columns: 1fr; gap: var(--space-md); }
+    .about-highlights { flex-direction: column; gap: var(--space-sm); }
+    .cta-actions { flex-direction: column; align-items: center; }
   }
 </style>
 
@@ -908,14 +1219,14 @@ import ProjectCard from "../components/ProjectCard";
     rootMargin: "0px 0px -30px 0px",
   });
 
-  // Animate sections on scroll
   const selectors = [
     ".section-header",
     ".section-header--center",
     ".project-featured-wrapper",
     ".team-card",
-    ".value-card",
-    ".about-text",
+    ".bento-card",
+    ".bento-main",
+    ".feature-card",
     ".cta-block",
   ];
 
@@ -925,5 +1236,56 @@ import ProjectCard from "../components/ProjectCard";
     htmlEl.style.transform = "translateY(30px)";
     htmlEl.style.transition = `opacity 0.6s ease ${i * 0.05}s, transform 0.6s ease ${i * 0.05}s`;
     animObserver.observe(htmlEl);
+  });
+
+  // Typewriter effect
+  const typewriterEl = document.getElementById("typewriter-text");
+  const typewriterText = "We're an indie studio obsessed with craft. Every pixel, every interaction, every line of code — built with intention.";
+
+  if (typewriterEl) {
+    let charIndex = 0;
+    const cursor = typewriterEl.querySelector(".typewriter-cursor");
+
+    const typeChar = () => {
+      if (charIndex < typewriterText.length) {
+        if (cursor) {
+          cursor.insertAdjacentText("beforebegin", typewriterText[charIndex]);
+        }
+        charIndex++;
+        setTimeout(typeChar, 35 + Math.random() * 25);
+      }
+    };
+
+    setTimeout(typeChar, 1200);
+  }
+
+  // Counter animation for hero stats
+  document.querySelectorAll<HTMLElement>(".hero-stat-number[data-count]").forEach((el) => {
+    const target = parseInt(el.dataset.count || "0", 10);
+    let current = 0;
+    const increment = () => {
+      if (current < target) {
+        current++;
+        el.textContent = String(current);
+        setTimeout(increment, 150);
+      }
+    };
+    setTimeout(increment, 1500);
+  });
+
+  // Team card tilt effect
+  document.querySelectorAll<HTMLElement>("[data-tilt]").forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const tiltX = (y - 0.5) * 8;
+      const tiltY = (x - 0.5) * -8;
+      card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-8px)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
   });
 </script>

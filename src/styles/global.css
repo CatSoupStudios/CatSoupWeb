@@ -1,39 +1,51 @@
 /* ============================================
-   CatSoup Studios — Global Design System
-   Palette: Auroria-based
+   CatSoup Studios — Premium Design System
+   Palette: Auroria-inspired with warm accents
    ============================================ */
 
 /* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* --- CSS Custom Properties --- */
 :root {
-  /* Accent Colors */
+  /* Core Accent Colors */
   --accent-cyan: #38bdf8;
   --accent-blue: #60a5fa;
   --accent-purple: #818cf8;
+  --accent-violet: #a78bfa;
+  --accent-pink: #ec4899;
+  --accent-amber: #f59e0b;
+  --accent-emerald: #34d399;
 
-  /* Background Colors */
+  /* Background Palette */
   --bg-deep: #0d0518;
   --bg-primary: #1a0a2e;
   --bg-secondary: #2d1250;
-  --bg-surface: #14182c;
-  --bg-elevated: #1a1e38;
+  --bg-surface: rgba(20, 24, 44, 0.6);
+  --bg-elevated: rgba(30, 34, 58, 0.8);
+  --bg-card: rgba(20, 24, 44, 0.5);
+  --bg-card-hover: rgba(30, 34, 58, 0.7);
 
   /* Text Colors */
   --text-primary: #f0f0f5;
   --text-secondary: #a0a0b8;
   --text-muted: #6b6b80;
+  --text-dimmed: #4a4a5c;
 
   /* Borders */
   --border-subtle: rgba(255, 255, 255, 0.06);
   --border-accent: rgba(56, 189, 248, 0.2);
+  --border-glow: rgba(56, 189, 248, 0.4);
 
   /* Gradients */
   --gradient-accent: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+  --gradient-warm: linear-gradient(135deg, var(--accent-amber), var(--accent-pink));
+  --gradient-aurora: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet), var(--accent-pink));
   --gradient-bg: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-primary) 50%, var(--bg-deep) 100%);
+  --gradient-card: linear-gradient(135deg, rgba(20, 24, 44, 0.8) 0%, rgba(56, 189, 248, 0.03) 100%);
 
   /* Spacing */
+  --space-2xs: 0.125rem;
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
@@ -43,6 +55,7 @@
   --space-3xl: 4rem;
   --space-4xl: 6rem;
   --space-5xl: 8rem;
+  --space-6xl: 12rem;
 
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -53,17 +66,21 @@
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
+  --radius-2xl: 32px;
   --radius-full: 9999px;
 
   /* Shadows */
   --shadow-glow: 0 0 40px rgba(56, 189, 248, 0.15);
+  --shadow-glow-lg: 0 0 80px rgba(56, 189, 248, 0.1);
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
   --shadow-elevated: 0 8px 40px rgba(0, 0, 0, 0.4);
+  --shadow-float: 0 20px 60px rgba(0, 0, 0, 0.5);
 
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
   --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* --- Reset --- */
@@ -128,33 +145,55 @@ ul, ol {
   -webkit-text-fill-color: transparent;
 }
 
+.gradient-text--warm {
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text--aurora {
+  background: var(--gradient-aurora);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .section {
   padding: var(--space-5xl) 0;
   position: relative;
 }
 
 .section-label {
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   color: var(--accent-cyan);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding: 6px 16px;
+  background: rgba(56, 189, 248, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: var(--radius-full);
 }
 
 .section-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  line-height: 1.15;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
   margin-bottom: var(--space-lg);
   color: var(--text-primary);
+  letter-spacing: -0.03em;
 }
 
 .section-subtitle {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
   max-width: 560px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* --- Animations --- */
@@ -166,6 +205,17 @@ ul, ol {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -185,6 +235,26 @@ ul, ol {
   100% { background-position: 0% 50%; }
 }
 
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+
 .animate-in {
   animation: fadeInUp 0.7s var(--transition-slow) both;
 }
@@ -193,6 +263,15 @@ ul, ol {
 .animate-in-delay-2 { animation-delay: 0.2s; }
 .animate-in-delay-3 { animation-delay: 0.3s; }
 .animate-in-delay-4 { animation-delay: 0.4s; }
+.animate-in-delay-5 { animation-delay: 0.5s; }
+
+/* --- Glass morphism utility --- */
+.glass {
+  background: rgba(20, 24, 44, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+}
 
 /* --- Scrollbar --- */
 ::-webkit-scrollbar {

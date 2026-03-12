@@ -1,17 +1,20 @@
 ---
 const navLinks = [
+  { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Team", href: "#team" },
-  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 ---
 
-<nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
   <div class="navbar-inner container">
-    <a href="/" class="navbar-logo">
-      <span class="logo-symbol">⬡</span>
-      <span class="logo-text">CatSoup<span class="logo-accent">Studios</span></span>
+    <a href="/" class="navbar-logo" aria-label="CatSoup Studios Home">
+      <img
+        src="https://res.cloudinary.com/dpn7m5qur/image/upload/v1773290751/logo-csp_hvdktt.png"
+        alt="CatSoup Studios Logo"
+        class="logo-img"
+      />
     </a>
 
     <ul class="navbar-links">
@@ -22,20 +25,30 @@ const navLinks = [
       ))}
     </ul>
 
-    <button class="navbar-menu-btn" id="menu-toggle" aria-label="Toggle menu">
-      <span class="menu-line"></span>
-      <span class="menu-line"></span>
-    </button>
+    <div class="navbar-right">
+      <a href="#projects" class="nav-cta">
+        <span class="nav-cta-dot"></span>
+        Try Auroriah
+      </a>
+      <button class="navbar-menu-btn" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </button>
+    </div>
   </div>
 
   <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
     <ul class="mobile-links">
       {navLinks.map((link) => (
         <li>
           <a href={link.href} class="mobile-link">{link.label}</a>
         </li>
       ))}
+      <li>
+        <a href="#projects" class="mobile-link mobile-link--cta">Try Auroriah</a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -62,8 +75,9 @@ const navLinks = [
   const mobileMenu = document.getElementById("mobile-menu");
 
   menuToggle?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("open");
+    const isOpen = mobileMenu?.classList.toggle("open");
     menuToggle.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
   // Close mobile menu on link click
@@ -71,6 +85,7 @@ const navLinks = [
     link.addEventListener("click", () => {
       mobileMenu?.classList.remove("open");
       menuToggle?.classList.remove("active");
+      menuToggle?.setAttribute("aria-expanded", "false");
     });
   });
 </script>
@@ -88,9 +103,9 @@ const navLinks = [
 
   .navbar.scrolled {
     padding: var(--space-sm) 0;
-    background: rgba(13, 5, 24, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(13, 5, 24, 0.85);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
     border-bottom: 1px solid var(--border-subtle);
   }
 
@@ -106,28 +121,23 @@ const navLinks = [
     gap: var(--space-sm);
     font-weight: 700;
     font-size: 1.15rem;
-    transition: opacity var(--transition-fast);
+    transition: all var(--transition-base);
   }
 
   .navbar-logo:hover {
-    opacity: 0.8;
+    opacity: 0.85;
   }
 
-  .logo-symbol {
-    font-size: 1.4rem;
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .logo-img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.15));
+    transition: all var(--transition-base);
   }
 
-  .logo-text {
-    color: var(--text-primary);
-  }
-
-  .logo-accent {
-    color: var(--text-secondary);
-    font-weight: 400;
+  .navbar-logo:hover .logo-img {
+    filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.3));
   }
 
   .navbar-links {
@@ -140,19 +150,22 @@ const navLinks = [
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--text-secondary);
-    transition: color var(--transition-fast);
+    transition: all var(--transition-base);
     position: relative;
+    padding: 4px 0;
   }
 
   .nav-link::after {
     content: "";
     position: absolute;
-    bottom: -4px;
-    left: 0;
+    bottom: -2px;
+    left: 50%;
     width: 0;
-    height: 1px;
-    background: var(--accent-cyan);
-    transition: width var(--transition-base);
+    height: 2px;
+    background: var(--gradient-accent);
+    transition: all var(--transition-base);
+    transform: translateX(-50%);
+    border-radius: var(--radius-full);
   }
 
   .nav-link:hover {
@@ -163,29 +176,71 @@ const navLinks = [
     width: 100%;
   }
 
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 8px 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color: var(--accent-cyan);
+    transition: all var(--transition-base);
+  }
+
+  .nav-cta:hover {
+    background: rgba(56, 189, 248, 0.18);
+    border-color: rgba(56, 189, 248, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+  }
+
+  .nav-cta-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-cyan);
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+    animation: pulse-glow 2s infinite;
+  }
+
   /* Hamburger */
   .navbar-menu-btn {
     display: none;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     padding: 4px;
   }
 
   .menu-line {
     display: block;
-    width: 24px;
-    height: 1.5px;
+    width: 22px;
+    height: 2px;
     background: var(--text-primary);
     transition: all var(--transition-base);
     transform-origin: center;
+    border-radius: var(--radius-full);
   }
 
   .navbar-menu-btn.active .menu-line:first-child {
-    transform: rotate(45deg) translate(3px, 3px);
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .navbar-menu-btn.active .menu-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
   }
 
   .navbar-menu-btn.active .menu-line:last-child {
-    transform: rotate(-45deg) translate(3px, -3px);
+    transform: rotate(-45deg) translate(5px, -5px);
   }
 
   /* Mobile menu */
@@ -195,11 +250,11 @@ const navLinks = [
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(13, 5, 24, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(13, 5, 24, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border-bottom: 1px solid var(--border-subtle);
-    padding: var(--space-xl);
+    padding: var(--space-xl) var(--space-xl) var(--space-2xl);
     transform: translateY(-10px);
     opacity: 0;
     pointer-events: none;
@@ -219,18 +274,31 @@ const navLinks = [
   }
 
   .mobile-link {
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--text-secondary);
-    transition: color var(--transition-fast);
+    transition: all var(--transition-fast);
+    padding: var(--space-xs) 0;
   }
 
   .mobile-link:hover {
     color: var(--accent-cyan);
   }
 
+  .mobile-link--cta {
+    color: var(--accent-cyan);
+    font-weight: 600;
+    margin-top: var(--space-md);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border-subtle);
+  }
+
   @media (max-width: 768px) {
     .navbar-links {
+      display: none;
+    }
+
+    .nav-cta {
       display: none;
     }
 

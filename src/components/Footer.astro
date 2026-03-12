@@ -2,97 +2,261 @@
 const currentYear = new Date().getFullYear();
 
 const socialLinks = [
-  { label: "Twitter", href: "#", icon: "𝕏" },
+  { label: "Twitter / X", href: "#", icon: "𝕏" },
   { label: "GitHub", href: "#", icon: "⌘" },
-  { label: "Discord", href: "#", icon: "◈" },
+  { label: "Instagram", href: "#", icon: "◎" },
+];
+
+const footerLinks = [
+  {
+    title: "Products",
+    links: [
+      { label: "Auroriah", href: "#projects" },
+      { label: "CatSoup Engine", href: "#projects" },
+      { label: "Project Nebula", href: "#projects" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About Us", href: "#about" },
+      { label: "Our Team", href: "#team" },
+      { label: "Careers", href: "#" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Privacy Policy", href: "#" },
+      { label: "Terms of Service", href: "#" },
+      { label: "Contact", href: "#contact" },
+    ],
+  },
 ];
 ---
 
-<footer class="footer">
-  <div class="footer-inner container">
-    <div class="footer-left">
-      <span class="footer-brand">
-        <span class="logo-symbol">⬡</span> CatSoup Studios
-      </span>
-      <p class="footer-copy">© {currentYear} CatSoup Studios. All rights reserved.</p>
+<footer class="footer" role="contentinfo">
+  <div class="footer-glow"></div>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <a href="/" class="footer-brand" aria-label="CatSoup Studios Home">
+          <span class="footer-logo-symbol">⬡</span>
+          <span class="footer-logo-text">CatSoup<span class="footer-logo-accent">Studios</span></span>
+        </a>
+        <p class="footer-tagline">Crafting digital experiences people love. Small team, big ambition, pixel-perfect execution.</p>
+        <div class="footer-socials">
+          {socialLinks.map((link) => (
+            <a href={link.href} class="footer-social-link" aria-label={link.label} title={link.label}>
+              <span class="footer-social-icon">{link.icon}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {footerLinks.map((col) => (
+        <div class="footer-link-col">
+          <h4 class="footer-col-title">{col.title}</h4>
+          <ul class="footer-col-links">
+            {col.links.map((link) => (
+              <li><a href={link.href} class="footer-col-link">{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
 
-    <div class="footer-right">
-      {socialLinks.map((link) => (
-        <a href={link.href} class="footer-social" aria-label={link.label} title={link.label}>
-          {link.icon}
-        </a>
-      ))}
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© {currentYear} CatSoup Studios. All rights reserved.</p>
+      <p class="footer-made">Made with <span class="footer-heart">♥</span> by CatSoup Studios</p>
     </div>
   </div>
 </footer>
 
 <style>
   .footer {
-    padding: var(--space-2xl) 0;
-    border-top: 1px solid var(--border-subtle);
-    background: var(--bg-deep);
+    position: relative;
+    padding: var(--space-4xl) 0 var(--space-2xl);
+    background: linear-gradient(180deg, var(--bg-deep) 0%, #080312 100%);
+    overflow: hidden;
   }
 
-  .footer-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .footer-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-purple), transparent);
+    opacity: 0.4;
   }
 
-  .footer-left {
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--space-3xl);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .footer-brand-col {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: var(--space-lg);
   }
 
   .footer-brand {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-weight: 700;
+    font-size: 1.15rem;
+    text-decoration: none;
   }
 
-  .logo-symbol {
+  .footer-logo-symbol {
+    font-size: 1.4rem;
     background: var(--gradient-accent);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  .footer-copy {
-    font-size: 0.8rem;
-    color: var(--text-muted);
+  .footer-logo-text {
+    color: var(--text-primary);
   }
 
-  .footer-right {
+  .footer-logo-accent {
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+
+  .footer-tagline {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 280px;
+  }
+
+  .footer-socials {
     display: flex;
-    gap: var(--space-lg);
+    gap: var(--space-sm);
   }
 
-  .footer-social {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    transition: color var(--transition-fast);
-    width: 36px;
-    height: 36px;
+  .footer-social-link {
+    width: 38px;
+    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     border: 1px solid var(--border-subtle);
-    transition: all var(--transition-fast);
+    background: rgba(255, 255, 255, 0.02);
+    transition: all var(--transition-base);
+    text-decoration: none;
   }
 
-  .footer-social:hover {
+  .footer-social-link:hover {
+    border-color: var(--accent-cyan);
+    background: rgba(56, 189, 248, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+  }
+
+  .footer-social-icon {
+    font-size: 1rem;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .footer-social-link:hover .footer-social-icon {
     color: var(--accent-cyan);
-    border-color: var(--border-accent);
-    background: rgba(56, 189, 248, 0.05);
+  }
+
+  .footer-col-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-primary);
+    margin-bottom: var(--space-lg);
+  }
+
+  .footer-col-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .footer-col-link {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    position: relative;
+    display: inline-block;
+  }
+
+  .footer-col-link:hover {
+    color: var(--accent-cyan);
+    transform: translateX(4px);
+  }
+
+  .footer-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+    margin-bottom: var(--space-xl);
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .footer-made {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .footer-heart {
+    color: #ef4444;
+    display: inline-block;
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  @media (max-width: 1024px) {
+    .footer-top {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+    }
+
+    .footer-brand-col {
+      grid-column: 1 / -1;
+    }
   }
 
   @media (max-width: 768px) {
-    .footer-inner {
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+
+    .footer-bottom {
       flex-direction: column;
-      gap: var(--space-lg);
+      gap: var(--space-sm);
       text-align: center;
     }
   }
