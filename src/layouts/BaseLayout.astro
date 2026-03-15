@@ -10,7 +10,7 @@ const {
 } = Astro.props;
 
 const siteUrl = "https://catsoupstudios.com";
-const ogImage = `${siteUrl}/og-image.png`;
+const ogImage = `${siteUrl}/logo-csp.png`;
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -107,7 +107,7 @@ const webPageSchema = {
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@catsoupstudios" />
     <meta name="twitter:creator" content="@catsoupstudios" />
     <meta name="twitter:title" content={title} />
